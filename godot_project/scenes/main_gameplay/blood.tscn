@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://vjyvhmelels5"]
+
+[ext_resource type="Script" path="res://scenes/main_gameplay/blood.gd" id="1_fhceq"]
+[ext_resource type="Texture2D" uid="uid://5r53xb6e1iux" path="res://assets/gfx/blood.png" id="2_1eoqo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmhp5"]
+atlas = ExtResource("2_1eoqo")
+region = Rect2(35, 0, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10ecd"]
+atlas = ExtResource("2_1eoqo")
+region = Rect2(70, 0, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asgiu"]
+atlas = ExtResource("2_1eoqo")
+region = Rect2(0, 0, 35, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n0p6h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmhp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10ecd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmhp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asgiu")
+}],
+"loop": false,
+"name": &"default",
+"speed": 13.0
+}]
+
+[node name="Blood" type="Node2D"]
+script = ExtResource("1_fhceq")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_n0p6h")
+frame = 3
+frame_progress = 1.0

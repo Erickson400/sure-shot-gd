@@ -15,7 +15,6 @@ This port is meant to be an accurate recreation of the original game into a mode
     - D - Move Tnt right
     - Left Arrow - Left player shoot
     - Right Arrow - Right player shoot
-    - Space - Detonate Tnt
 
 ### License:
 This is a fan project that builds upon a game who's source code is free to find on the InternetArchive

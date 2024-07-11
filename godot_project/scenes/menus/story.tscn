@@ -1,0 +1,343 @@
+[gd_scene load_steps=23 format=3 uid="uid://bb38nxrwkra1n"]
+
+[ext_resource type="Script" path="res://scenes/menus/story.gd" id="1_flyk5"]
+[ext_resource type="AudioStream" uid="uid://h0gxegiq7d4y" path="res://assets/sfx/shuffle.wav" id="2_osu7l"]
+[ext_resource type="Texture2D" uid="uid://cg2mc6nj188qr" path="res://assets/gfx/surelogo2.png" id="2_uhf8m"]
+[ext_resource type="Texture2D" uid="uid://b63fojecyh2ec" path="res://assets/gfx/story01.png" id="3_qqvou"]
+[ext_resource type="Texture2D" uid="uid://soawy6pk26qv" path="res://assets/gfx/story02.png" id="4_siaus"]
+[ext_resource type="Texture2D" uid="uid://ch10lw7wpwgsk" path="res://assets/gfx/story03.png" id="5_mi145"]
+[ext_resource type="Texture2D" uid="uid://dlfyihbg7ftb7" path="res://assets/gfx/story04.png" id="6_5rmq7"]
+[ext_resource type="Texture2D" uid="uid://b5nl5kt5v7byc" path="res://assets/gfx/story05.png" id="7_dmme7"]
+[ext_resource type="Texture2D" uid="uid://cbgv05i571asg" path="res://assets/gfx/story06.png" id="8_6ukcb"]
+[ext_resource type="Texture2D" uid="uid://bxo4dxavfda8b" path="res://assets/gfx/story07.png" id="9_81vxx"]
+[ext_resource type="Texture2D" uid="uid://c1qhuk75r0pul" path="res://assets/gfx/story08.png" id="10_bl31j"]
+[ext_resource type="Texture2D" uid="uid://butmo100lvvg1" path="res://assets/gfx/story09.png" id="11_d4h3u"]
+[ext_resource type="Texture2D" uid="uid://dbh85xw0tpt8w" path="res://assets/gfx/story10.png" id="12_424jm"]
+[ext_resource type="Texture2D" uid="uid://cejv6gy6qomvr" path="res://assets/gfx/story11.png" id="13_s2qnl"]
+[ext_resource type="Texture2D" uid="uid://dbbkxeswcqreb" path="res://assets/gfx/story12.png" id="14_c054w"]
+[ext_resource type="Texture2D" uid="uid://bp72ldeci4c7v" path="res://assets/gfx/story13.png" id="15_b1e53"]
+[ext_resource type="Texture2D" uid="uid://c2l0we8b6cpca" path="res://assets/gfx/story14.png" id="16_ouwx7"]
+[ext_resource type="LabelSettings" uid="uid://c4wxjgk0mnfpx" path="res://assets/fonts/font1.tres" id="17_twgka"]
+[ext_resource type="SpriteFrames" uid="uid://djkrvfket8r7w" path="res://resources/frames/heads_frames.tres" id="18_bm75x"]
+[ext_resource type="LabelSettings" uid="uid://cb45u5d2xmf4i" path="res://assets/fonts/font2.tres" id="19_5ak8t"]
+[ext_resource type="AudioStream" uid="uid://bwqw48m7q66wb" path="res://assets/sfx/amb4.wav" id="21_2lnke"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m16jv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_qqvou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_siaus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mi145")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5rmq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dmme7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6ukcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_81vxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bl31j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_d4h3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_424jm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_s2qnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_c054w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_b1e53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ouwx7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Story" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_flyk5")
+metadata/_edit_lock_ = true
+
+[node name="Shuffle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_osu7l")
+
+[node name="Bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.215686, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(400, 100)
+texture = ExtResource("2_uhf8m")
+
+[node name="PageImage" type="AnimatedSprite2D" parent="."]
+position = Vector2(400, 300)
+sprite_frames = SubResource("SpriteFrames_m16jv")
+frame = 6
+
+[node name="Descriptors" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Description1" type="Label" parent="Descriptors"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 400.0
+offset_right = 714.0
+offset_bottom = 415.0
+text = "I suggested camping out on either side of the field, with a view to"
+label_settings = ExtResource("17_twgka")
+
+[node name="Description2" type="Label" parent="Descriptors"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 416.0
+offset_right = 699.0
+offset_bottom = 431.0
+text = "sandwiching any enemy that passed by in a blaze of machine gun fire!
+"
+label_settings = ExtResource("17_twgka")
+
+[node name="Description3" type="Label" parent="Descriptors"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 432.0
+offset_right = 699.0
+offset_bottom = 447.0
+label_settings = ExtResource("17_twgka")
+
+[node name="Description4" type="Label" parent="Descriptors"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 448.0
+offset_right = 699.0
+offset_bottom = 463.0
+label_settings = ExtResource("17_twgka")
+
+[node name="Description5" type="Label" parent="Descriptors"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 466.0
+offset_right = 699.0
+offset_bottom = 481.0
+label_settings = ExtResource("17_twgka")
+
+[node name="Head" type="AnimatedSprite2D" parent="."]
+position = Vector2(161, 414)
+scale = Vector2(-1, 1)
+sprite_frames = ExtResource("18_bm75x")
+frame = 2
+
+[node name="Numbers" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="1" type="Label" parent="Numbers"]
+modulate = Color(0, 0.294118, 0, 1)
+layout_mode = 0
+offset_left = 193.0
+offset_top = 188.0
+offset_right = 207.0
+offset_bottom = 212.0
+text = "1"
+label_settings = ExtResource("19_5ak8t")
+
+[node name="2" type="Label" parent="Numbers"]
+modulate = Color(0, 0.294118, 0, 1)
+layout_mode = 0
+offset_left = 223.0
+offset_top = 188.0
+offset_right = 237.0
+offset_bottom = 212.0
+text = "2
+"
+label_settings = ExtResource("19_5ak8t")
+
+[node name="3" type="Label" parent="Numbers"]
+modulate = Color(0, 0.294118, 0, 1)
+layout_mode = 0
+offset_left = 253.0
+offset_top = 188.0
+offset_right = 267.0
+offset_bottom = 212.0
+text = "3"
+label_settings = ExtResource("19_5ak8t")
+
+[node name="4" type="Label" parent="Numbers"]
+modulate = Color(0, 0.294118, 0, 1)
+layout_mode = 0
+offset_left = 283.0
+offset_top = 188.0
+offset_right = 297.0
+offset_bottom = 212.0
+text = "4"
+label_settings = ExtResource("19_5ak8t")
+
+[node name="5" type="Label" parent="Numbers"]
+modulate = Color(0, 0.294118, 0, 1)
+layout_mode = 0
+offset_left = 313.0
+offset_top = 188.0
+offset_right = 327.0
+offset_bottom = 212.0
+text = "5
+"
+label_settings = ExtResource("19_5ak8t")
+
+[node name="6" type="Label" parent="Numbers"]
+modulate = Color(0, 0.294118, 0, 1)
+layout_mode = 0
+offset_left = 343.0
+offset_top = 188.0
+offset_right = 357.0
+offset_bottom = 212.0
+text = "6"
+label_settings = ExtResource("19_5ak8t")
+
+[node name="7" type="Label" parent="Numbers"]
+modulate = Color(0, 0.294118, 0, 1)
+layout_mode = 0
+offset_left = 373.0
+offset_top = 188.0
+offset_right = 387.0
+offset_bottom = 212.0
+text = "7"
+label_settings = ExtResource("19_5ak8t")
+
+[node name="8" type="Label" parent="Numbers"]
+modulate = Color(0, 0.294118, 0, 1)
+layout_mode = 0
+offset_left = 403.0
+offset_top = 188.0
+offset_right = 417.0
+offset_bottom = 212.0
+text = "8
+"
+label_settings = ExtResource("19_5ak8t")
+
+[node name="9" type="Label" parent="Numbers"]
+modulate = Color(0, 0.294118, 0, 1)
+layout_mode = 0
+offset_left = 433.0
+offset_top = 188.0
+offset_right = 447.0
+offset_bottom = 212.0
+text = "9
+"
+label_settings = ExtResource("19_5ak8t")
+
+[node name="10" type="Label" parent="Numbers"]
+modulate = Color(0, 0.294118, 0, 1)
+layout_mode = 0
+offset_left = 456.0
+offset_top = 188.0
+offset_right = 484.0
+offset_bottom = 212.0
+text = "10"
+label_settings = ExtResource("19_5ak8t")
+
+[node name="11" type="Label" parent="Numbers"]
+modulate = Color(0, 0.294118, 0, 1)
+layout_mode = 0
+offset_left = 493.0
+offset_top = 188.0
+offset_right = 521.0
+offset_bottom = 212.0
+text = "11"
+label_settings = ExtResource("19_5ak8t")
+
+[node name="12" type="Label" parent="Numbers"]
+modulate = Color(0, 0.294118, 0, 1)
+layout_mode = 0
+offset_left = 528.0
+offset_top = 188.0
+offset_right = 556.0
+offset_bottom = 212.0
+text = "12"
+label_settings = ExtResource("19_5ak8t")
+
+[node name="13" type="Label" parent="Numbers"]
+modulate = Color(0, 0.294118, 0, 1)
+layout_mode = 0
+offset_left = 564.0
+offset_top = 188.0
+offset_right = 592.0
+offset_bottom = 212.0
+text = "13"
+label_settings = ExtResource("19_5ak8t")
+
+[node name="14" type="Label" parent="Numbers"]
+modulate = Color(0, 0.294118, 0, 1)
+layout_mode = 0
+offset_left = 600.0
+offset_top = 188.0
+offset_right = 628.0
+offset_bottom = 212.0
+text = "14"
+label_settings = ExtResource("19_5ak8t")
+
+[node name="Goal" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 185.0
+offset_top = 543.0
+offset_right = 616.0
+offset_bottom = 558.0
+text = "COMPLETE THE MAIN GAME TO REVEAL THE FULL STORY!"
+label_settings = ExtResource("17_twgka")
+
+[node name="Guide" type="Label" parent="."]
+modulate = Color(0.607843, 0.607843, 0.607843, 1)
+layout_mode = 0
+offset_left = 242.0
+offset_top = 573.0
+offset_right = 559.0
+offset_bottom = 588.0
+text = "LEFT/RIGHT=Scroll Pages, ENTER/ESC=Exit"
+label_settings = ExtResource("17_twgka")
+
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_2lnke")
+autoplay = true
+
+[connection signal="finished" from="Ambience" to="." method="_on_ambience_finished"]

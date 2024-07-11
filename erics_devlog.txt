@@ -1,0 +1,38 @@
+----Feb 15, 2024
+My goal is to re-implement the game into Godot. Make it as accurate as possible to the original game but with modern capabilities. I'm not sure how Nim will be useful in this project. I was thinking of turning it to Nim code before turning it to godot. But I'm still puzzled on what to do. I want a firm understanding of the game's structure, enough to understand the core game logics. Once I know the logics, I can easily implement it in Godot on my own. Researching the game logics should be my main priority, not to decomp the whole ASM code from bottom up.  
+
+In 2002 the game was written in BlitzBasic, on the Blitz3D game engine. It used DirectX 7. The engine is now dead and the source code of Blitz is on github.
+
+My struggles at the moment: BlitzBasic is not C, thus ghidra will find it hard to write readable pseudo code. The engine seems to heavily focus on modules/dlls, The main game entry seems to be in a chain of pointers, and runs deep down in the engine. The game logics are so nested, to the point that static pointers are almost impossible to find on cheat engine (This might be a cheat engine bug). Turns out BlitzBasic is an interpreted language.
+
+My current strategy:
++ Follow the entry point until I find a game loop looking section.
++ Follow the entry point and rename all the top level functions to what they're for, if I still dont understand what they do then go a level down and so on.
++ Find instructions that manipulate the shooter's health. i.e decrement by 1, set to 20, or checking if its 0. There must be a global that links these together.
+
+Change of plans. Linkz has found the source code of the game. Its a link to an Internet Archive that I sent him a few years ago. I didn't know Sure shot was there. Mat uploaded the source code himself and the source for his other classic games. The source is written in BlitzBasic as expected. This has skipped an entire barrier, I can put ghidra a side and focus on translating this into Godot. 
+
+----Feb 17, 2024
+I finished the intro. I'm keeping track of changes I've done in comparison with the Blitz code, mainly for the convinience of implementing it in godot.  
+
+I'm thinking of making the main scene the scene manager of the game. The scenes will emit a signal with the scene they want to load as an arguments.
+
+The intro and its change scene signal emittion is now done. Now I can work on the main menu.
+
+----Feb 22, 2024
+I'll do a polishing phase after I finish implementing the whole game. Right now its a mess because it was not meant to be on Godot, So its my job to clean it up, organize it, and documment it. I'll name this phase as v0.5, the final polished one will be v1.0 and it will be ready for github. 
+
+----Feb 23, 2024
+This is frustrating. It's not as fun as I expected. the way Mat wrote the code is annoyingly difficult. I should stick to creating games myself, thinking about logic and problems, instead of translating/copying another project. 
+
+----May 23, 2014
+Continuing to work on the game. I think its possible to finish this with enough patience and time to think. I should take a break if I'm doing too much, I'm doing this for fun. Worked on the schedules, made a script that reads the messy repetitive section telling enemies how to spawn. For this I made a python script to turn it into a readable txt file, and then a godot script that reads that txt file into a workable dictionary. I'll add the python scripts to the repo as part of the project. Implemented the screenshot feature. All menus are done, I'm now working on the last and most difficult part of the game, the Gameplay. I got most of the graphics taken care of, but logics wise I've only done the Tnt fiddle and explotion. There is a lot going on in the code in this section, and its hard to keep track of everything. I should work on the players first.
+
+----June 8, 2024
+Feeling tired and sleepy, about to head to bed. Not sure if I should take another break or just give it a day. I should probably polish the players, tnt, and level progress logics before working with enemies. I want to make this as accurate as possible to the original. The Menus are already accurate, but with the gameplay I'm used to going easy on em and improvising, I dont want to do that on release. 
+
+----July 10, 2024
+I've worked on the game enough. I'd say the game is 90% finished. I re-wrote most of the game in order to be accurate to the original instead of "modernizing" it with godot features, I think sticking to the original code made it easier to port. I polished the game one last time to prepare for github. I'll be working on the github readme now. I think the game is somewhat playable from start to finish. After uploading it I'll probably not work on it again, I'll move on to other projects not related to porting or rewriting code. I've learned a lot from this challenge and don't regret starting it after 6 months.
+
+
+

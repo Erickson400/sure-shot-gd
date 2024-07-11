@@ -1,0 +1,518 @@
+[gd_scene load_steps=35 format=3 uid="uid://skc3xpr0rmvn"]
+
+[ext_resource type="Script" path="res://scenes/menus/campaign.gd" id="1_3mgva"]
+[ext_resource type="SpriteFrames" uid="uid://djkrvfket8r7w" path="res://resources/frames/heads_frames.tres" id="2_n0e7e"]
+[ext_resource type="Texture2D" uid="uid://cebemckgpxvjv" path="res://assets/bgs/sky01.png" id="3_7ejsn"]
+[ext_resource type="Texture2D" uid="uid://cg2mc6nj188qr" path="res://assets/gfx/surelogo2.png" id="3_x6mgp"]
+[ext_resource type="Texture2D" uid="uid://drea6cuvpmgdd" path="res://assets/bgs/sky02.png" id="4_fpsr1"]
+[ext_resource type="Texture2D" uid="uid://dvqqgam6ot6ab" path="res://assets/bgs/sky03.png" id="5_kmams"]
+[ext_resource type="Texture2D" uid="uid://dajxu1hjf0m3w" path="res://assets/bgs/sky04.png" id="6_gyr3m"]
+[ext_resource type="SpriteFrames" uid="uid://4b4yn4g8ulc8" path="res://resources/frames/background_frames.tres" id="7_e8yxo"]
+[ext_resource type="SpriteFrames" uid="uid://ckw1wxe55m6jn" path="res://resources/frames/foreground_frames.tres" id="8_87j30"]
+[ext_resource type="SpriteFrames" uid="uid://bxfetfl7m6n5l" path="res://resources/frames/player_frames.tres" id="9_vx8d8"]
+[ext_resource type="Texture2D" uid="uid://cm28gf6a1l6w4" path="res://assets/gfx/medal_bronze.png" id="11_f4n85"]
+[ext_resource type="Texture2D" uid="uid://ckx0nphxr1xnu" path="res://assets/gfx/medal_silver.png" id="12_bioa8"]
+[ext_resource type="Texture2D" uid="uid://cyrjngowtod1n" path="res://assets/gfx/medal_gold.png" id="13_5yl8o"]
+[ext_resource type="LabelSettings" uid="uid://c4wxjgk0mnfpx" path="res://assets/fonts/font1.tres" id="14_ft8bf"]
+[ext_resource type="Texture2D" uid="uid://ctelv182g0lq1" path="res://assets/gfx/level1a.png" id="15_8e3os"]
+[ext_resource type="LabelSettings" uid="uid://cb45u5d2xmf4i" path="res://assets/fonts/font2.tres" id="15_lghtk"]
+[ext_resource type="Texture2D" uid="uid://dddsk8vf2tpfm" path="res://assets/gfx/level2a.png" id="16_tnpua"]
+[ext_resource type="Texture2D" uid="uid://dim5ulvstioa2" path="res://assets/gfx/level3a.png" id="17_8tx26"]
+[ext_resource type="Texture2D" uid="uid://cky1lo6jte6hl" path="res://assets/gfx/level4a.png" id="18_ymlpf"]
+[ext_resource type="Texture2D" uid="uid://chyvxhaaokqr6" path="res://assets/gfx/level5a.png" id="19_4m2rw"]
+[ext_resource type="Texture2D" uid="uid://d27plc15y8l6o" path="res://assets/gfx/level1b.png" id="20_ihkgb"]
+[ext_resource type="Texture2D" uid="uid://d203m8phb8wb3" path="res://assets/gfx/level2b.png" id="21_jbvbh"]
+[ext_resource type="Texture2D" uid="uid://b8lv1eekocp3w" path="res://assets/gfx/level3b.png" id="22_8fees"]
+[ext_resource type="Texture2D" uid="uid://be0rjutdsok6n" path="res://assets/gfx/level4b.png" id="23_gwogv"]
+[ext_resource type="Texture2D" uid="uid://c3qaj00gow1t" path="res://assets/gfx/level5b.png" id="24_0n3fx"]
+[ext_resource type="SpriteFrames" uid="uid://dxwmh0ksbvbn2" path="res://resources/frames/ball_frames.tres" id="26_66t44"]
+[ext_resource type="AudioStream" uid="uid://bwqw48m7q66wb" path="res://assets/sfx/amb4.wav" id="28_kf1ww"]
+[ext_resource type="AudioStream" uid="uid://h0gxegiq7d4y" path="res://assets/sfx/shuffle.wav" id="29_yh534"]
+
+[sub_resource type="Animation" id="Animation_x4ss6"]
+resource_name = "Head"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head2:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [3, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m0pbx"]
+_data = {
+"Head": SubResource("Animation_x4ss6")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4scqt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7ejsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fpsr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kmams")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gyr3m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yb7k8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_f4n85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bioa8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5yl8o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SphereMesh" id="SphereMesh_c3l17"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03mpo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_8e3os")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_tnpua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_8tx26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ymlpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_4m2rw")
+}],
+"loop": true,
+"name": &"a",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_ihkgb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_jbvbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_8fees")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_gwogv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_0n3fx")
+}],
+"loop": true,
+"name": &"b",
+"speed": 5.0
+}]
+
+[node name="Campaign" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3mgva")
+metadata/_edit_lock_ = true
+
+[node name="Bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.215686, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(400, 100)
+texture = ExtResource("3_x6mgp")
+
+[node name="Head1" type="AnimatedSprite2D" parent="."]
+position = Vector2(141, 344)
+sprite_frames = ExtResource("2_n0e7e")
+
+[node name="Head2" type="AnimatedSprite2D" parent="."]
+position = Vector2(244, 377)
+sprite_frames = ExtResource("2_n0e7e")
+frame = 1
+
+[node name="Stories1" type="Label" parent="."]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 330.0
+offset_right = 791.0
+offset_bottom = 345.0
+text = "A few groups of Troopers and Musclemen patrol this area. Shouldn't be too much trouble."
+label_settings = ExtResource("14_ft8bf")
+
+[node name="Stories2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 345.0
+offset_right = 791.0
+offset_bottom = 360.0
+text = "This is our first time using the Sure Shot tactic! Be careful until we get used to it."
+label_settings = ExtResource("14_ft8bf")
+
+[node name="TNTVerdict" type="Label" parent="."]
+modulate = Color(0.607843, 0.607843, 0.607843, 1)
+layout_mode = 0
+offset_left = 260.0
+offset_top = 371.0
+offset_right = 654.0
+offset_bottom = 386.0
+text = "I was able to lay down the TNT device. Spend it wisely..."
+label_settings = ExtResource("14_ft8bf")
+
+[node name="HeadAnims" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_m0pbx")
+}
+autoplay = "Head"
+
+[node name="Sky" type="AnimatedSprite2D" parent="."]
+position = Vector2(400, 220)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_4scqt")
+
+[node name="Foreground" type="AnimatedSprite2D" parent="."]
+position = Vector2(400, 277)
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("8_87j30")
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+position = Vector2(400, 220)
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("7_e8yxo")
+
+[node name="P1" type="AnimatedSprite2D" parent="."]
+position = Vector2(310, 240)
+sprite_frames = ExtResource("9_vx8d8")
+animation = &"p1"
+frame = 4
+
+[node name="P2" type="AnimatedSprite2D" parent="."]
+position = Vector2(490, 240)
+sprite_frames = ExtResource("9_vx8d8")
+animation = &"p2"
+frame = 4
+
+[node name="Medal1" type="AnimatedSprite2D" parent="."]
+position = Vector2(200, 240)
+sprite_frames = SubResource("SpriteFrames_yb7k8")
+
+[node name="Medal2" type="AnimatedSprite2D" parent="."]
+position = Vector2(600, 240)
+sprite_frames = SubResource("SpriteFrames_yb7k8")
+
+[node name="Highlight" type="MeshInstance2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(109, 516.5)
+scale = Vector2(20, 20)
+mesh = SubResource("SphereMesh_c3l17")
+
+[node name="LevelName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 148.0
+offset_right = 446.0
+offset_bottom = 172.0
+text = "Area 51"
+label_settings = ExtResource("15_lghtk")
+
+[node name="Hiscore" type="Label" parent="."]
+modulate = Color(1, 0.705882, 0, 1)
+layout_mode = 0
+offset_left = 365.0
+offset_top = 303.0
+offset_right = 435.0
+offset_bottom = 318.0
+text = "Hi Score: "
+label_settings = ExtResource("14_ft8bf")
+
+[node name="LevelType" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Grasslands" type="Label" parent="LevelType"]
+modulate = Color(0, 0.333333, 0, 1)
+layout_mode = 0
+offset_left = 113.0
+offset_top = 420.0
+offset_right = 187.0
+offset_bottom = 435.0
+text = "Grasslands"
+label_settings = ExtResource("14_ft8bf")
+
+[node name="Plains" type="Label" parent="LevelType"]
+modulate = Color(0, 0.333333, 0, 1)
+layout_mode = 0
+offset_left = 253.0
+offset_top = 420.0
+offset_right = 298.0
+offset_bottom = 435.0
+text = "Plains
+"
+label_settings = ExtResource("14_ft8bf")
+
+[node name="BaseCamp" type="Label" parent="LevelType"]
+modulate = Color(0, 0.333333, 0, 1)
+layout_mode = 0
+offset_left = 359.0
+offset_top = 420.0
+offset_right = 441.0
+offset_bottom = 435.0
+text = "Base Camp
+"
+label_settings = ExtResource("14_ft8bf")
+
+[node name="Mountains" type="Label" parent="LevelType"]
+modulate = Color(0, 0.333333, 0, 1)
+layout_mode = 0
+offset_left = 487.0
+offset_top = 420.0
+offset_right = 563.0
+offset_bottom = 435.0
+text = "Mountains"
+label_settings = ExtResource("14_ft8bf")
+
+[node name="Coast" type="Label" parent="LevelType"]
+modulate = Color(0, 0.333333, 0, 1)
+layout_mode = 0
+offset_left = 629.0
+offset_top = 420.0
+offset_right = 671.0
+offset_bottom = 435.0
+text = "Coast"
+label_settings = ExtResource("14_ft8bf")
+
+[node name="LevelPreview" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Grasslands" type="AnimatedSprite2D" parent="LevelPreview"]
+position = Vector2(150, 480)
+sprite_frames = SubResource("SpriteFrames_03mpo")
+animation = &"a"
+
+[node name="Plains" type="AnimatedSprite2D" parent="LevelPreview"]
+position = Vector2(275, 480)
+sprite_frames = SubResource("SpriteFrames_03mpo")
+animation = &"a"
+
+[node name="BaseCamp" type="AnimatedSprite2D" parent="LevelPreview"]
+position = Vector2(400, 480)
+sprite_frames = SubResource("SpriteFrames_03mpo")
+animation = &"a"
+
+[node name="Mountains" type="AnimatedSprite2D" parent="LevelPreview"]
+position = Vector2(525, 480)
+sprite_frames = SubResource("SpriteFrames_03mpo")
+animation = &"a"
+
+[node name="Coast" type="AnimatedSprite2D" parent="LevelPreview"]
+position = Vector2(650, 480)
+sprite_frames = SubResource("SpriteFrames_03mpo")
+animation = &"a"
+
+[node name="Guide" type="Label" parent="."]
+modulate = Color(0.607843, 0.607843, 0.607843, 1)
+layout_mode = 0
+offset_left = 299.0
+offset_top = 573.0
+offset_right = 502.0
+offset_bottom = 588.0
+text = "ENTER=Play Area, ESC=Exit"
+label_settings = ExtResource("14_ft8bf")
+
+[node name="Guide2" type="Label" parent="."]
+modulate = Color(0.607843, 0.607843, 0.607843, 1)
+layout_mode = 0
+offset_left = 205.0
+offset_top = 573.0
+offset_right = 595.0
+offset_bottom = 588.0
+text = "LEFT/RIGHT=Select Area, ENTER=Play Area, ESC=Exit"
+label_settings = ExtResource("14_ft8bf")
+
+[node name="Congrats" type="Label" parent="."]
+layout_mode = 0
+offset_left = 323.0
+offset_top = 533.0
+offset_right = 478.0
+offset_bottom = 548.0
+text = "CONGRATULATIONS!"
+label_settings = ExtResource("14_ft8bf")
+
+[node name="Congrats2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 548.0
+offset_right = 668.0
+offset_bottom = 563.0
+text = "You completed Sure Shot! Now see how many Gold Medals you can earn...!"
+label_settings = ExtResource("14_ft8bf")
+
+[node name="Balls" type="Node2D" parent="."]
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Ball1" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(109, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball2" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(129, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball3" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(149, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball4" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(169, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball5" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(189, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball6" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(234, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball7" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(254, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball8" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(274, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball9" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(294, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball10" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(314, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball11" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(359, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball12" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(379, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball13" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(399, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball14" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(419, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball15" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(439, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball16" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(484, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball17" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(504, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball18" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(524, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball19" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(544, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball20" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(564, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball21" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(609, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball22" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(629, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball23" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(649, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball24" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(669, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ball25" type="AnimatedSprite2D" parent="Balls"]
+position = Vector2(689, 516)
+sprite_frames = ExtResource("26_66t44")
+
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_kf1ww")
+autoplay = true
+
+[node name="Shuffle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("29_yh534")
+
+[connection signal="finished" from="Ambience" to="." method="_on_ambience_finished"]

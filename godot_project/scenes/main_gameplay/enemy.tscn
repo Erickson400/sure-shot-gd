@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://br2wd8ydxn387"]
+
+[ext_resource type="Script" path="res://scenes/main_gameplay/enemy.gd" id="1_odwjt"]
+[ext_resource type="SpriteFrames" uid="uid://bj6jgf8r1v4p5" path="res://resources/frames/enemy_frames.tres" id="1_owd11"]
+[ext_resource type="AudioStream" uid="uid://bce3rneo88odr" path="res://assets/sfx/die1.wav" id="4_mb4lx"]
+[ext_resource type="AudioStream" uid="uid://cbieqjpwc7jw0" path="res://assets/sfx/die2.wav" id="5_k8q0p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6rnq"]
+size = Vector2(25, 40)
+
+[node name="Enemy" type="Area2D" groups=["Enemy"]]
+script = ExtResource("1_odwjt")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_owd11")
+animation = &"enemy1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 17)
+shape = SubResource("RectangleShape2D_m6rnq")
+disabled = true
+
+[node name="Die1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mb4lx")
+
+[node name="Die2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_k8q0p")
+
+[node name="Attack" type="AudioStreamPlayer" parent="."]
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+
+[node name="Impact" type="AudioStreamPlayer" parent="."]
+
+[node name="Pain" type="AudioStreamPlayer" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,0 +1,113 @@
+[gd_scene load_steps=15 format=3 uid="uid://d3nsyyob1fte8"]
+
+[ext_resource type="Script" path="res://scenes/main_gameplay/gameplay.gd" id="1_oof8r"]
+[ext_resource type="AudioStream" uid="uid://h0gxegiq7d4y" path="res://assets/sfx/shuffle.wav" id="3_8npoa"]
+[ext_resource type="SpriteFrames" uid="uid://bkpo3skkscnvr" path="res://resources/frames/sky_frames.tres" id="3_50ib0"]
+[ext_resource type="SpriteFrames" uid="uid://ckw1wxe55m6jn" path="res://resources/frames/foreground_frames.tres" id="4_tv0y5"]
+[ext_resource type="SpriteFrames" uid="uid://4b4yn4g8ulc8" path="res://resources/frames/background_frames.tres" id="5_qk46v"]
+[ext_resource type="Texture2D" uid="uid://du8dlec4tbd78" path="res://assets/gfx/tnt.png" id="6_3rf7m"]
+[ext_resource type="Texture2D" uid="uid://cg2mc6nj188qr" path="res://assets/gfx/surelogo2.png" id="6_kpa5k"]
+[ext_resource type="LabelSettings" uid="uid://c4wxjgk0mnfpx" path="res://assets/fonts/font1.tres" id="9_f0gjb"]
+[ext_resource type="Texture2D" uid="uid://cbuooy560vds7" path="res://assets/gfx/text_fail.png" id="9_kc7c8"]
+[ext_resource type="Script" path="res://scenes/main_gameplay/tnt.gd" id="9_pvs8r"]
+[ext_resource type="PackedScene" uid="uid://67a856lm4vh3" path="res://scenes/main_gameplay/player.tscn" id="10_l08b1"]
+[ext_resource type="Texture2D" uid="uid://cskm5xnb4imhn" path="res://assets/gfx/text_clear.png" id="10_nr5q2"]
+[ext_resource type="LabelSettings" uid="uid://cb45u5d2xmf4i" path="res://assets/fonts/font2.tres" id="12_tf2p7"]
+[ext_resource type="SpriteFrames" uid="uid://ceb0bcn1ex8m4" path="res://resources/frames/medal_frames.tres" id="15_pwypo"]
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource("1_oof8r")
+
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8npoa")
+
+[node name="Sky" type="AnimatedSprite2D" parent="."]
+position = Vector2(400, 196)
+sprite_frames = ExtResource("3_50ib0")
+metadata/_edit_lock_ = true
+
+[node name="Foreground" type="AnimatedSprite2D" parent="."]
+position = Vector2(400, 493)
+sprite_frames = ExtResource("4_tv0y5")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+position = Vector2(400, 196)
+sprite_frames = ExtResource("5_qk46v")
+metadata/_edit_lock_ = true
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(400, 50)
+texture = ExtResource("6_kpa5k")
+
+[node name="Tnt" type="Sprite2D" parent="."]
+position = Vector2(400, 452)
+texture = ExtResource("6_3rf7m")
+script = ExtResource("9_pvs8r")
+
+[node name="Fiddle" type="AudioStreamPlayer" parent="Tnt"]
+stream = ExtResource("3_8npoa")
+
+[node name="Player1" parent="." node_paths=PackedStringArray("tnt") instance=ExtResource("10_l08b1")]
+position = Vector2(80, 400)
+tnt = NodePath("../Tnt")
+
+[node name="Player2" parent="." node_paths=PackedStringArray("tnt") instance=ExtResource("10_l08b1")]
+position = Vector2(720, 400)
+is_player_1 = false
+tnt = NodePath("../Tnt")
+
+[node name="Enemies" type="Node2D" parent="."]
+editor_description = "Must all spawn at the beginning. but inactive.
+Enemies must queue_free"
+
+[node name="Fail" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(400, 250)
+texture = ExtResource("9_kc7c8")
+
+[node name="Victory" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(400, 250)
+texture = ExtResource("10_nr5q2")
+
+[node name="Remaining" type="Label" parent="."]
+offset_left = 316.0
+offset_top = 573.0
+offset_right = 484.0
+offset_bottom = 588.0
+text = " 15 Enemies Remaining"
+label_settings = ExtResource("9_f0gjb")
+
+[node name="Score" type="Label" parent="."]
+offset_left = 344.0
+offset_top = 91.0
+offset_right = 456.0
+offset_bottom = 115.0
+text = "Score: 20"
+label_settings = ExtResource("12_tf2p7")
+
+[node name="HiScore" type="Label" parent="."]
+modulate = Color(1, 0.705882, 0, 1)
+offset_left = 357.0
+offset_top = 113.0
+offset_right = 444.0
+offset_bottom = 128.0
+text = "Hi Score: 20"
+label_settings = ExtResource("9_f0gjb")
+
+[node name="Medal1" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(200, 250)
+sprite_frames = ExtResource("15_pwypo")
+
+[node name="Medal2" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(600, 250)
+sprite_frames = ExtResource("15_pwypo")
+
+[connection signal="finished" from="Ambience" to="." method="_on_ambience_finished"]
+[connection signal="on_died" from="Player1" to="." method="_on_player_1_on_died"]
+[connection signal="on_died" from="Player2" to="." method="_on_player_2_on_died"]

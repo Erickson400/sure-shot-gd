@@ -1,0 +1,126 @@
+[gd_scene load_steps=6 format=3 uid="uid://744gy8p8un6a"]
+
+[ext_resource type="Script" path="res://scenes/menus/howto.gd" id="1_q6133"]
+[ext_resource type="Texture2D" uid="uid://cg2mc6nj188qr" path="res://assets/gfx/surelogo2.png" id="2_vsqfd"]
+[ext_resource type="Texture2D" uid="uid://ckeq53s78u2d3" path="res://assets/gfx/controls.png" id="3_np5md"]
+[ext_resource type="LabelSettings" uid="uid://c4wxjgk0mnfpx" path="res://assets/fonts/font1.tres" id="4_dx1l7"]
+[ext_resource type="AudioStream" uid="uid://bwqw48m7q66wb" path="res://assets/sfx/amb4.wav" id="5_8uvht"]
+
+[node name="Howto" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q6133")
+metadata/_edit_lock_ = true
+
+[node name="Bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.215686, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(400, 100)
+texture = ExtResource("2_vsqfd")
+
+[node name="Controls" type="Sprite2D" parent="."]
+position = Vector2(400, 300)
+texture = ExtResource("3_np5md")
+
+[node name="Descriptors" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Description1" type="Label" parent="Descriptors"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 423.0
+offset_right = 685.0
+offset_bottom = 438.0
+text = "For co-operative play you may want to share the keyboard with a second player."
+label_settings = ExtResource("4_dx1l7")
+
+[node name="Description2" type="Label" parent="Descriptors"]
+modulate = Color(0.607843, 0.607843, 0.607843, 1)
+layout_mode = 0
+offset_left = 140.0
+offset_top = 443.0
+offset_right = 661.0
+offset_bottom = 458.0
+text = "During the game, enemies of all kinds will enter and patrol the battlefield."
+label_settings = ExtResource("4_dx1l7")
+
+[node name="Description3" type="Label" parent="Descriptors"]
+modulate = Color(0.607843, 0.607843, 0.607843, 1)
+layout_mode = 0
+offset_left = 222.0
+offset_top = 473.0
+offset_right = 665.0
+offset_bottom = 488.0
+text = "Success demands good judgment, reflexes, and co-operation!"
+label_settings = ExtResource("4_dx1l7")
+
+[node name="Description4" type="Label" parent="Descriptors"]
+modulate = Color(0.607843, 0.607843, 0.607843, 1)
+layout_mode = 0
+offset_left = 137.0
+offset_top = 493.0
+offset_right = 664.0
+offset_bottom = 508.0
+text = "The combined remaining health of both players will determine your score."
+label_settings = ExtResource("4_dx1l7")
+
+[node name="Description5" type="Label" parent="Descriptors"]
+modulate = Color(0.607843, 0.607843, 0.607843, 1)
+layout_mode = 0
+offset_left = 139.0
+offset_top = 508.0
+offset_right = 661.0
+offset_bottom = 523.0
+text = "High scores yield medals. The best player will recieve the Top Gun award."
+label_settings = ExtResource("4_dx1l7")
+
+[node name="Description6" type="Label" parent="Descriptors"]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 528.0
+offset_right = 606.0
+offset_bottom = 543.0
+text = "Consult the game manual for more detailed instructions..."
+label_settings = ExtResource("4_dx1l7")
+
+[node name="Description7" type="Label" parent="Descriptors"]
+modulate = Color(0.607843, 0.607843, 0.607843, 1)
+layout_mode = 0
+offset_left = 339.0
+offset_top = 573.0
+offset_right = 462.0
+offset_bottom = 588.0
+text = "ENTER/ESC=Exit"
+label_settings = ExtResource("4_dx1l7")
+
+[node name="Description8" type="Label" parent="Descriptors"]
+modulate = Color(0.607843, 0.607843, 0.607843, 1)
+layout_mode = 0
+offset_left = 132.0
+offset_top = 458.0
+offset_right = 669.0
+offset_bottom = 473.0
+text = "You must fire at them from either side of the field without killing each other."
+label_settings = ExtResource("4_dx1l7")
+
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8uvht")
+autoplay = true

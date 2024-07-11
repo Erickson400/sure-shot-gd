@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://kjtw7cyu323w"]
+
+[ext_resource type="Script" path="res://scenes/autoload/menu_sound_bus.gd" id="1_l1pv0"]
+[ext_resource type="AudioStream" uid="uid://jfifegmgxro6" path="res://assets/sfx/explode.wav" id="2_3hpqw"]
+
+[node name="MenuSoundBus" type="Node"]
+script = ExtResource("1_l1pv0")
+
+[node name="Sfx" type="AudioStreamPlayer" parent="."]
+
+[node name="Explotion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_3hpqw")

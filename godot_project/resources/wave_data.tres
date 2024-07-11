@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="WaveData" load_steps=2 format=3 uid="uid://be2hbk25glf1p"]
+
+[ext_resource type="Script" path="res://resources/wave_data.gd" id="1_cjnf8"]
+
+[resource]
+script = ExtResource("1_cjnf8")

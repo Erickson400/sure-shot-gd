@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://bkpo3skkscnvr"]
+
+[ext_resource type="Texture2D" uid="uid://cebemckgpxvjv" path="res://assets/bgs/sky01.png" id="1_q7aqt"]
+[ext_resource type="Texture2D" uid="uid://drea6cuvpmgdd" path="res://assets/bgs/sky02.png" id="2_nojua"]
+[ext_resource type="Texture2D" uid="uid://dvqqgam6ot6ab" path="res://assets/bgs/sky03.png" id="3_3h75u"]
+[ext_resource type="Texture2D" uid="uid://dajxu1hjf0m3w" path="res://assets/bgs/sky04.png" id="4_fc0gt"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_q7aqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nojua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3h75u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fc0gt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

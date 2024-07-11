@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvdn0qmjoglm"]
+
+[ext_resource type="Script" path="res://scenes/main_gameplay/explotion.gd" id="1_wrjyd"]
+[ext_resource type="SpriteFrames" uid="uid://ijsnkb5reqec" path="res://resources/frames/explotion_frames.tres" id="2_dekvy"]
+[ext_resource type="AudioStream" uid="uid://jfifegmgxro6" path="res://assets/sfx/explode.wav" id="3_8plec"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_poo8w"]
+size = Vector2(180, 200)
+
+[node name="Explotion" type="Area2D" groups=["Explotion"]]
+script = ExtResource("1_wrjyd")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = ExtResource("2_dekvy")
+frame = 1
+
+[node name="Boom" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8plec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_poo8w")
+
+[connection signal="finished" from="Boom" to="." method="_on_audio_stream_player_finished"]

@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dxwmh0ksbvbn2"]
+
+[ext_resource type="Texture2D" uid="uid://rqxfocngd6ox" path="res://assets/gfx/ball_bronze.png" id="1_goidp"]
+[ext_resource type="Texture2D" uid="uid://cd8w6eb22v8jj" path="res://assets/gfx/ball_green.png" id="2_ym6q8"]
+[ext_resource type="Texture2D" uid="uid://xqhxjynbx0cu" path="res://assets/gfx/ball_silver.png" id="3_gu311"]
+[ext_resource type="Texture2D" uid="uid://bqq8rrdjdcmf8" path="res://assets/gfx/ball_gold.png" id="4_cb0uh"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ym6q8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_goidp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gu311")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cb0uh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

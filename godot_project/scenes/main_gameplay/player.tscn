@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://67a856lm4vh3"]
+
+[ext_resource type="SpriteFrames" uid="uid://bxfetfl7m6n5l" path="res://resources/frames/player_frames.tres" id="1_t8asv"]
+[ext_resource type="Script" path="res://scenes/main_gameplay/player.gd" id="2_356ip"]
+[ext_resource type="LabelSettings" uid="uid://c4wxjgk0mnfpx" path="res://assets/fonts/font1.tres" id="3_b5xeg"]
+[ext_resource type="AudioStream" uid="uid://ccltorqw1ifnq" path="res://assets/sfx/shot1.wav" id="3_rav6x"]
+[ext_resource type="AudioStream" uid="uid://bce3rneo88odr" path="res://assets/sfx/die1.wav" id="4_mfna1"]
+[ext_resource type="AudioStream" uid="uid://d2vqtu66miedo" path="res://assets/sfx/shot2.wav" id="4_u6413"]
+[ext_resource type="AudioStream" uid="uid://cbieqjpwc7jw0" path="res://assets/sfx/die2.wav" id="5_qtoyx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_neef1"]
+size = Vector2(20, 100)
+
+[node name="Player" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_t8asv")
+animation = &"p1"
+frame = 11
+script = ExtResource("2_356ip")
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+
+[node name="Pain" type="AudioStreamPlayer" parent="."]
+
+[node name="Impact" type="AudioStreamPlayer" parent="."]
+
+[node name="Shoot1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rav6x")
+
+[node name="Shoot2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_u6413")
+
+[node name="Die1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mfna1")
+
+[node name="Die2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qtoyx")
+
+[node name="Health" type="Label" parent="."]
+offset_left = -8.0
+offset_top = 68.0
+offset_right = 9.0
+offset_bottom = 83.0
+text = "20
+"
+label_settings = ExtResource("3_b5xeg")
+
+[node name="TopGun" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -120.0
+offset_right = -27.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Top Gun!"
+label_settings = ExtResource("3_b5xeg")
+
+[node name="Barrel" type="Marker2D" parent="."]
+position = Vector2(33, 18)
+
+[node name="Hitbox" type="Area2D" parent="." groups=["Player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_neef1")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

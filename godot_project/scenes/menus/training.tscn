@@ -1,0 +1,191 @@
+[gd_scene load_steps=9 format=3 uid="uid://bf1x5vvxtlsuw"]
+
+[ext_resource type="Script" path="res://scenes/menus/training.gd" id="1_tkp6x"]
+[ext_resource type="AudioStream" uid="uid://h0gxegiq7d4y" path="res://assets/sfx/shuffle.wav" id="2_0qtn7"]
+[ext_resource type="Texture2D" uid="uid://cg2mc6nj188qr" path="res://assets/gfx/surelogo2.png" id="2_lxlgx"]
+[ext_resource type="SpriteFrames" uid="uid://bkpo3skkscnvr" path="res://resources/frames/sky_frames.tres" id="3_5t17k"]
+[ext_resource type="AudioStream" uid="uid://bwqw48m7q66wb" path="res://assets/sfx/amb4.wav" id="4_ml1rw"]
+[ext_resource type="SpriteFrames" uid="uid://ckw1wxe55m6jn" path="res://resources/frames/foreground_frames.tres" id="4_xctuh"]
+[ext_resource type="SpriteFrames" uid="uid://4b4yn4g8ulc8" path="res://resources/frames/background_frames.tres" id="5_sh8gg"]
+[ext_resource type="LabelSettings" uid="uid://c4wxjgk0mnfpx" path="res://assets/fonts/font1.tres" id="6_jp58m"]
+
+[node name="Training" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tkp6x")
+metadata/_edit_lock_ = true
+
+[node name="Shuffle" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0qtn7")
+
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ml1rw")
+autoplay = true
+
+[node name="Bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.215686, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(400, 100)
+texture = ExtResource("2_lxlgx")
+
+[node name="Sky" type="AnimatedSprite2D" parent="."]
+position = Vector2(400, 420)
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("3_5t17k")
+
+[node name="Foreground" type="AnimatedSprite2D" parent="."]
+position = Vector2(400, 477)
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("4_xctuh")
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+position = Vector2(400, 420)
+scale = Vector2(0.2, 0.2)
+sprite_frames = ExtResource("5_sh8gg")
+
+[node name="EnemySet" type="Label" parent="."]
+modulate = Color(0, 0.411765, 0, 1)
+layout_mode = 0
+offset_left = 362.0
+offset_top = 168.0
+offset_right = 439.0
+offset_bottom = 183.0
+text = "Enemy Set "
+label_settings = ExtResource("6_jp58m")
+
+[node name="EnemySetDesc" type="Label" parent="."]
+modulate = Color(0, 0.294118, 0, 1)
+layout_mode = 0
+offset_left = 362.0
+offset_top = 183.0
+offset_right = 439.0
+offset_bottom = 198.0
+text = "Enemy Set"
+label_settings = ExtResource("6_jp58m")
+
+[node name="EnemyWave" type="Label" parent="."]
+modulate = Color(0, 0.411765, 0, 1)
+layout_mode = 0
+offset_left = 355.0
+offset_top = 218.0
+offset_right = 446.0
+offset_bottom = 233.0
+text = "Enemy Wave"
+label_settings = ExtResource("6_jp58m")
+
+[node name="EnemyWaveDesc" type="Label" parent="."]
+modulate = Color(0, 0.294118, 0, 1)
+layout_mode = 0
+offset_left = 355.0
+offset_top = 233.0
+offset_right = 446.0
+offset_bottom = 248.0
+text = "Enemy Wave"
+label_settings = ExtResource("6_jp58m")
+
+[node name="TNTDevice" type="Label" parent="."]
+modulate = Color(0, 0.411765, 0, 1)
+layout_mode = 0
+offset_left = 359.0
+offset_top = 268.0
+offset_right = 441.0
+offset_bottom = 283.0
+text = "TNT Device"
+label_settings = ExtResource("6_jp58m")
+
+[node name="TNTDeviceDesc" type="Label" parent="."]
+modulate = Color(0, 0.294118, 0, 1)
+layout_mode = 0
+offset_left = 390.0
+offset_top = 283.0
+offset_right = 411.0
+offset_bottom = 298.0
+text = "On
+"
+label_settings = ExtResource("6_jp58m")
+
+[node name="HostageHelp" type="Label" parent="."]
+modulate = Color(0, 0.411765, 0, 1)
+layout_mode = 0
+offset_left = 352.0
+offset_top = 318.0
+offset_right = 448.0
+offset_bottom = 333.0
+text = "Hostage Help"
+label_settings = ExtResource("6_jp58m")
+
+[node name="HostageHelpDesc" type="Label" parent="."]
+modulate = Color(0, 0.294118, 0, 1)
+layout_mode = 0
+offset_left = 390.0
+offset_top = 333.0
+offset_right = 411.0
+offset_bottom = 348.0
+text = "On
+"
+label_settings = ExtResource("6_jp58m")
+
+[node name="SkyText" type="Label" parent="."]
+modulate = Color(0, 0.411765, 0, 1)
+layout_mode = 0
+offset_left = 385.0
+offset_top = 403.0
+offset_right = 416.0
+offset_bottom = 418.0
+text = "Sky "
+label_settings = ExtResource("6_jp58m")
+
+[node name="BackgroundText" type="Label" parent="."]
+modulate = Color(0, 0.411765, 0, 1)
+layout_mode = 0
+offset_left = 357.0
+offset_top = 438.0
+offset_right = 444.0
+offset_bottom = 453.0
+text = "Background
+"
+label_settings = ExtResource("6_jp58m")
+
+[node name="ForegroundText" type="Label" parent="."]
+modulate = Color(0, 0.411765, 0, 1)
+layout_mode = 0
+offset_left = 358.0
+offset_top = 473.0
+offset_right = 442.0
+offset_bottom = 488.0
+text = "Foreground
+"
+label_settings = ExtResource("6_jp58m")
+
+[node name="Complete" type="Label" parent="."]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 543.0
+offset_right = 613.0
+offset_bottom = 558.0
+text = "COMPLETE THE MAIN GAME TO UNLOCK MORE OPTIONS!"
+label_settings = ExtResource("6_jp58m")
+
+[node name="Guide" type="Label" parent="."]
+modulate = Color(0.607843, 0.607843, 0.607843, 1)
+layout_mode = 0
+offset_left = 119.0
+offset_top = 573.0
+offset_right = 681.0
+offset_bottom = 588.0
+text = "UP/DOWN=Select Option, LEFT/RIGHT=Change Option, ENTER=Play, ESC=Exit"
+label_settings = ExtResource("6_jp58m")
+
+[connection signal="finished" from="Ambience" to="." method="_on_ambience_finished"]
