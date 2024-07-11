@@ -6,6 +6,7 @@ This port is meant to be an accurate recreation of the original game into a mode
 
 [Original Game Source Code](https://ia903005.us.archive.org/view_archive.php?archive=/28/items/mdickiesourcecodearchives/MDickie%20Source%20Code%20Archives.rar)
 
+![screenshot](https://github.com/Erickson400/sure-shot-gd/blob/main/screenshot.png)
 
 
 ### Core changes:
